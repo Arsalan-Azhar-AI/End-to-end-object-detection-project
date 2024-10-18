@@ -5,7 +5,7 @@ import uuid
 
 IMAGE_PATH="CollectedImages"
 
-labels=["Hello","Yes","No","Thanks","IloveYou","Please"]
+labels=["good","important","intelligent","late","less"]
 
 number_of_images=5
 
