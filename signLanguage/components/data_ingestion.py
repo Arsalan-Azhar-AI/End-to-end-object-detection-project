@@ -21,7 +21,7 @@ class DataIngestion:
     def download_data(self)-> str:
         '''
         Fetch data from the url
-        '''
+        ''' 
 
         try: 
             dataset_url = self.data_ingestion_config.data_download_url
