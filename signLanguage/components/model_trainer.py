@@ -39,9 +39,8 @@ class ModelTrainer:
 
             with open(f'yolov5/models/custom_{model_config_file_name}.yaml', 'w') as f:
                 yaml.dump(config, f)
-            dataset_path = os.path.join("../../sign language dataset", "data.yaml")
-
-            os.system(f"python yolov5/train.py --img 640 --batch {self.model_trainer_config.batch_size} --epochs {self.model_trainer_config.no_epochs} --data '../../sign language dataset/data.yaml' --cfg ./yolov5/models/custom_yolov5s.yaml --weights {self.model_trainer_config.weight_name} --name yolov5s_results --cache")
+           
+            os.system(f"python yolov5/train.py --img 640 --batch {self.model_trainer_config.batch_size} --epochs {self.model_trainer_config.no_epochs} --data '../../sign_language_dataset/data.yaml' --cfg ./yolov5/models/custom_yolov5s.yaml --weights {self.model_trainer_config.weight_name} --name yolov5s_results --cache")
             shutil.copy('yolov5/runs/train/yolov5s_results/weights/best.pt', 'yolov5/')
             os.makedirs(self.model_trainer_config.model_trainer_dir, exist_ok=True)
             shutil.copy('yolov5/runs/train/yolov5s_results/weights/best.pt', f"{self.model_trainer_config.model_trainer_dir}/")
