@@ -2,7 +2,7 @@ import os
 
 ARTIFACTS_DIR: str = "artifacts"
 
- 
+
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
 """
