@@ -59,7 +59,7 @@ python app.py
 '''
 deployment process using aws with jenkinsfile cicd pipelien.
 
-.github\workflows\main.yaml-> in this path write a workflow
+.github\workflows\main.yaml-> in this path workflow is present
 
 .jenkins\Jenkinsfile-> in this path write jenkinsfile code and update the dockercompose url with your own dockercompose url from github.
 
@@ -70,11 +70,11 @@ also write dockerfile and docker-compose file.
 
 than go to aws and launch the ec2 machine all the process in present in other readme.md on github and go to the cli of ec2.
 
-scripts\jenkins.sh-> in this path copy all the command and paste it in ec2 cli. go to the link that mention after 2nd command and paste it copy all the command and paste it in ec2 cli, make sure the last command is to install jenkins after install jenkins command neglect all the commands. than run rest of commnads present in this path -> scripts\jenkins.sh. when you run the aws cinfigure command you need to give secret, access key and regin.than restart the terminal. for restart the terminal follow these steps. cancle this terminal and go to ec2 machine and than instance and click on reboot instance and stop the instance. than connect to the machine.
-than go ec2-> security option->  security groups -> edit inbound rules-> click add roles-> give port 8080 -> and this one 0.0.0.0/0 -> and save all things. go ec2 go to instance and copy the url its working fine.
+scripts\jenkins.sh-> in this path copy all the command and paste it in ec2 cli. go to the link that mention after 2nd command and paste it in browser and copy all the command that present inside and paste it in ec2 cli, make sure the last command is to install jenkins after install jenkins command neglect all the commands. than run rest of commnads present in this path -> scripts\jenkins.sh. when you run the aws cinfigure command you need to give secret, access key and regin.than restart the terminal. for restart the terminal follow these steps. cancle this terminal and go to ec2 machine and than instance and click on reboot instance and stop the instance. than connect to the machine.
+than go ec2-> security option->  security groups -> edit inbound rules-> click add roles-> give port 8080 -> and this one 0.0.0.0/0 -> and save rules. go ec2 go to instance and copy the public url and add port with that and paste in new browser tab its working fine.
 #set elastic IP: go to instance-> left sidebar click on elastic IP -> allocate elastic ip-> click allocate-> Associate elastic IP-> slect the instace like jinkins machine-> click associate.
 copy the ip address from instance and add port number 8080 and search i new tab you wil see the jinkens server.
-than copy the url in this jinkens page. go to this path scripts\jenkins.sh and replace the url with new one in the last comand. than copy the last command and paste it in ec2 cli.ec2 cli give me a password copy the password and paste it in jinkens page and continue. than install suggested plugins. -> create First Admin User --> save and contineou.-> in nistance configuration you see the jinkens url and save and finsh and start using jinkens.
+than copy the url in this jinkens page. go to this path scripts/jenkins.sh and replace the url with new one in the last comand. than copy the last command and paste it in ec2 cli.ec2 cli give me a password copy the password and paste it in jinkens page and continue. than install suggested plugins. -> create First Admin User --> save and contineou.-> in nistance configuration you see the jinkens url and save and finsh and start using jinkens.
 click on Manage jenkins->Plugins-> Avalaable Plugins->search ssh Agent -> install-> check mark on restrat button when installition is completed.
 
 jinkens dashboard click on Manage jinkens->crediential-> system-> global credentials ->add credential.-> kind should secret text-> first of all give the ID ECR_REPOSITORY.-> go to aws and create ECR and copy the url-> go to jenkis page i am previously working and there paste the url in Secret input.->click create
@@ -110,3 +110,21 @@ new secret-> TOKEN-> go to jinkens and click on profile and there click on confi
 
 new secret-> JOBS-> go to jenkins Dashboard and copy the name of project like sign project-> add secret
 
+push the changing on github and go to github action and and trigger the jinkens and run the workflow again
+
+it start deployment and its take time.
+
+than go ec2-> security option->  security groups -> edit inbound rules-> click add roles-> give port 8080 -> and this one 0.0.0.0/0 -> and save rules.
+
+than copy the public url from ec2 and add port number with that and serach in new tab your app will be running successfully.
+
+finally terminate all the things.
+
+terminate ec2, all the things present in previous readme.md
+delete ECR
+go to elastic ip and select elastic ip you created and click on action and release elastic ip address
+
+delete iam user
+
+
+# Congradulation
